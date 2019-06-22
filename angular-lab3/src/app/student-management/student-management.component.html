@@ -1,0 +1,23 @@
+<form>
+  <h3>Add Student</h3>
+
+  <div>
+    <label for="name">Name:</label>
+    <input name="name" #newName>
+    </div>
+    <div>
+    <label for="surname">Surname:</label>
+    <input name="surname" #newSurname>
+    </div>
+    <div>
+    <label for="privateNumber">PrivateNumber:</label>
+    <input name="privateNumber" #newPrivateNumber>
+    </div>
+
+    <button (click)="addStudent(newName, newSurname, newPrivateNumber)">
+      Save
+    </button>
+</form>
+
+<app-student-item *ngFor="let student of students"
+[student] = "student">
